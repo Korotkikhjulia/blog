@@ -11,7 +11,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <!-- Theme style -->
-eet" href="/assets/css/adminlte.min.css">
+  <link rel="stylesheet" href="/assets/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
