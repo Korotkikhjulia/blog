@@ -18,7 +18,6 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -56,8 +55,8 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')">
-                                                    <i class="fas fs-trash-alt"></i>
-                                                </button>
+                                                        <i class="fas fs-trash-alt">D</i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -68,10 +67,15 @@
                             @else
                             <p>Категорий пока нет...</p>
                             @endif
+                            <div class="row justify-content-end">
+                                <div class='col-md-12'>
+                                    {{$categories->appends(['test'=>request()->test])->links('vendor.pagination.bootstrap-4')}}
+                                </div>
+                            </div>
+
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix"></div>
-
                     </div>
                     <!-- /.card -->
                 </div>

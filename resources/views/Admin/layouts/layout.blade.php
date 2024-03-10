@@ -1,3 +1,4 @@
+@extends('admin.layouts.error')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +16,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+
   <!-- Site wrapper -->
   <div class="wrapper">
     <!-- Navbar -->
@@ -31,6 +33,7 @@
           <a href="#" class="nav-link">Contact</a>
         </li>
       </ul>
+      
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
