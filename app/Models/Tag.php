@@ -22,4 +22,8 @@ class Tag extends Model
             ]
             ];
     }
+    protected $fillable = [
+        'title',
+        'slug',
+    ];
 }
