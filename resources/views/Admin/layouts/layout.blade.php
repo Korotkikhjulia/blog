@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +12,11 @@
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/assets/css/adminlte.min.css">
+  <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 </head>
 @include('admin.layouts.error')
+
 <body class="hold-transition sidebar-mini">
   <!-- Site wrapper -->
   <div class="wrapper">
@@ -225,7 +227,7 @@
             </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-archive"></i>
+                <i class="nav-icon fas fa-tag"></i>
                 <p>
                   Тэги
                   <i class="right fas fa-angle-left"></i>
@@ -242,6 +244,29 @@
                   <a href="{{ route('tags.create') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Новый тэг</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Статьи
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('posts.index') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Список статей</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('posts.create') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Новая статья</p>
                   </a>
                 </li>
               </ul>
@@ -280,6 +305,17 @@
   <script src="/assets/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="/assets/js/demo.js"></script>
+  <script src="/assets/plugins/select2/js/select2.full.min.js"></script>
+  <script>
+    $(function() {
+      //Initialize Select2 Elements
+      $('.select2').select2()
+      //Initialize Select2 Elements
+      $('.select2bs4').select2({
+        theme:'bootstrap4'
+      })
+    })
+  </script>
 </body>
 
 </html>

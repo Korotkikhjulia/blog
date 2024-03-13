@@ -18,7 +18,7 @@ class Post extends Model
     {
         return $this->belongsToMany(Category::class);
     }
-    public function sluggable()
+    public function sluggable():array
     {
         return [
             'slug'=>[
@@ -26,4 +26,13 @@ class Post extends Model
             ]
             ];
     }
+    protected $fillable = [
+        'title',
+        'slug',
+        'description',
+        'content',
+        'category_id',
+        'views',
+        'thumbnail',
+    ];
 }
