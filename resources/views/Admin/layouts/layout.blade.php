@@ -175,7 +175,7 @@
             <img src="/assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">@if (Auth::user()) {{Auth::user()->name}} @else {{'No login'}}@endif</a>
           </div>
         </div>
 
@@ -270,6 +270,12 @@
                   </a>
                 </li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('logout')}}" class="nav-link">
+                <i class="nav-icon fas fa-home"></i>
+                <p>Logout</p>
+              </a>
             </li>
           </ul>
         </nav>

@@ -7,7 +7,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Blank Page</h1>
+              <h1>Главная</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -37,7 +37,8 @@
             </div>
           </div>
           <div class="card-body">
-            Start creating your amazing application!
+            <p>Количество статей: {{ $posts}}</p>
+            <p>Количество пользователей: {{ $users}}</p>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
