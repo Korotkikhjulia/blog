@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\PostController2;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ use App\Http\Controllers\Admin\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 
 // Route::group(['prefix' => 'admin', 'namespace'=> 'Admin'], function() {
 //     Route::get('/', [MainController::class, 'index'])->name('admin.index');
@@ -42,3 +43,5 @@ Route::group(['middleware'=>'guest'], function () {
 Route::get('/login', [UserController::class, 'loginForm'])->name('login.create');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+Route::get('/', [PostController2::class, 'index'])->name('home');
+Route::get('/article', [PostController2::class, 'show'])->name('posts.single');
