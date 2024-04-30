@@ -5,13 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
-use Symfony\Component\HttpFoundation\Request;
 
 class Post extends Model
 {
     // use HasFactory;
     use Sluggable;
+    
+    protected $fillable = [
+        'title',
+        'description',
+        'content',
+        'category_id',
+        'thumbnail',
+    ];
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
@@ -26,15 +36,8 @@ class Post extends Model
             'slug'=>[
                 'source'=>'title'
             ]
-            ];
+        ];
     }
-    protected $fillable = [
-        'title',
-        'description',
-        'content',
-        'category_id',
-        'thumbnail',
-    ];
 
     public static function uploadImage(Request $request, $image = null)
     {
@@ -45,6 +48,7 @@ class Post extends Model
             $folder = date('Y-m-d');
             return $request->file('thumbnail')->store("images/{$folder}");
         }
+        return null;
     }
 
     public function getImage()
@@ -53,5 +57,10 @@ class Post extends Model
             return asset("no-image.png");
         }
         return asset("uploads/{$this->thumbnail}");
+    }
+
+    public function getPostDate()
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)->format('d F, Y');
     }
 }

@@ -13,12 +13,12 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'public'),
 
     /*
-    |--------------------------------------------------------------------------
+    |------------------------------------------------------------------------—
     | Filesystem Disks
-    |--------------------------------------------------------------------------
+    |------------------------------------------------------------------------—
     |
     | Here you may configure as many filesystem "disks" as you wish, and you
     | may even configure multiple disks of the same driver. Defaults have
@@ -39,7 +39,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => public_path('uploads'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -59,15 +59,15 @@ return [
     ],
 
     /*
-    |--------------------------------------------------------------------------
-    | Symbolic Links
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the symbolic links that will be created when the
-    | `storage:link` Artisan command is executed. The array keys should be
-    | the locations of the links and the values should be their targets.
-    |
-    */
+|------------------------------------------------------------------------—
+| Symbolic Links
+|------------------------------------------------------------------------—
+|
+| Here you may configure the symbolic links that will be created when the
+| `storage:link` Artisan command is executed. The array keys should be
+| the locations of the links and the values should be their targets.
+|
+*/
 
     'links' => [
         public_path('storage') => storage_path('app/public'),

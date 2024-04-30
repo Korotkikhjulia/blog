@@ -44,4 +44,6 @@ Route::get('/login', [UserController::class, 'loginForm'])->name('login.create')
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/', [PostController2::class, 'index'])->name('home');
-Route::get('/article', [PostController2::class, 'show'])->name('posts.single');
+Route::get('/article/{slug}', [PostController2::class, 'show'])->name('posts.single');
+Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('categories.single');
+Route::get('/tag/{slug}', [TagController::class, 'show'])->name('tags.single');

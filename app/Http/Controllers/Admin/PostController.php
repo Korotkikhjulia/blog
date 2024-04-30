@@ -43,12 +43,12 @@ class PostController extends Controller
             'thumbnail' => 'nullable|image',
         ]);
         $data = $request->all();
-
-        if (!$request->hasFile('thumbnail')) {
-            $data['thumbnail'] = "images/1/1.jpg";
-        } else {
-            $data['thumbnail'] = Post::uploadImage($request);
-        }
+        $data['thumbnail'] = Post::uploadImage($request);
+        // if (!$request->hasFile('thumbnail')) {
+        //     $data['thumbnail'] = "images/1/1.jpg";
+        // } else {
+        //     $data['thumbnail'] = Post::uploadImage($request);
+        // }
         $post = Post::create($data);
         $post->tags()->sync($request->tags);
         return redirect()->route('posts.index')->with('success', 'Статья добавлена');
