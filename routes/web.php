@@ -7,6 +7,9 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\PostController2;
+use App\Http\Controllers\CategoryController2;
+use App\Http\Controllers\TagController2;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +48,6 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/', [PostController2::class, 'index'])->name('home');
 Route::get('/article/{slug}', [PostController2::class, 'show'])->name('posts.single');
-Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('categories.single');
-Route::get('/tag/{slug}', [TagController::class, 'show'])->name('tags.single');
+Route::get('/category/{slug}', [CategoryController2::class, 'show'])->name('categories.single');
+Route::get('/tag/{slug}', [TagController2::class, 'show'])->name('tags.single');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
