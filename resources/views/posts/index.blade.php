@@ -49,7 +49,6 @@
 
 </head>
 <body>
-@include('admin.layouts.sidebar')
     <div id="wrapper">
         <header class="market-header header">
             <div class="container-fluid">
@@ -59,27 +58,7 @@
                     </button>
                     <a class="navbar-brand" href="marketing-index.html"><img src="images/version/market-logo.png" alt=""></a>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-category.html">Marketing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-category.html">Make Money</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-blog.html">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-contact.html">Contact Us</a>
-                            </li>
-                        </ul>
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="text" placeholder="How may I help?">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
+                    @include('admin.layouts.navbar')
                     </div>
                 </nav>
             </div><!-- end container-fluid -->
@@ -315,6 +294,7 @@
 
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="sidebar">
+                        @include('admin.layouts.sidebar')
                             <div class="widget">
                                 <h2 class="widget-title">Recent Posts</h2>
                                 <div class="blog-list-widget">
