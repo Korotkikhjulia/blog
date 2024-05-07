@@ -31,6 +31,8 @@ use App\Http\Controllers\SearchController;
 //     // Route::resource('/categories', 'CategoryController');
 // });
 
+Route::get('/', [PostController2::class, 'index'])->name('home');
+
 Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function () {
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
     Route::resource('categories', CategoryController::class);
@@ -46,7 +48,7 @@ Route::group(['middleware'=>'guest'], function () {
 Route::get('/login', [UserController::class, 'loginForm'])->name('login.create');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
-Route::get('/', [PostController2::class, 'index'])->name('home');
+
 Route::get('/article/{slug}', [PostController2::class, 'show'])->name('posts.single');
 Route::get('/category/{slug}', [CategoryController2::class, 'show'])->name('categories.single');
 Route::get('/tag/{slug}', [TagController2::class, 'show'])->name('tags.single');

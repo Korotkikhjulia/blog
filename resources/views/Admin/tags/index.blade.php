@@ -11,8 +11,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item">Blank Page </li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
+                        <li class="breadcrumb-item">Tags </li>
                     </ol>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')">
-                                                        <i class="fas fs-trash-alt">D</i>
+                                                        <i class="fas fs-trash-alt">Del</i>
                                                     </button>
                                                 </form>
                                             </td>

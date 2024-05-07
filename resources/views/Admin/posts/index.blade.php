@@ -11,8 +11,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item">Blank Page </li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
+                        <li class="breadcrumb-item">Posts </li>
                     </ol>
                 </div>
             </div>
@@ -52,14 +52,14 @@
                                             <td>{{ $post->tags->pluck('title')->join(', ') }}</td>
                                             <td>{{ $post->created_at }}</td>
                                             <td>
-                                                <a href=" {{ route('posts.edit' , ['post' => $post->id]) }}" class="btn btn-info btn-sm float-left mr-1">
+                                                <a href=" {{ route('posts.edit' , ['post' => $post->id]) }}" class="btn btn-info btn-sm float-left mr-1" style="margin-bottom:5px">
                                                     <i class="fas fa-pencil-alt"></i>
                                                 </a>
                                                 <form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post" class="float-left">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')">
-                                                        <i class="fas fs-trash-alt">D</i>
+                                                        <i class="fas fs-trash-alt">Del</i>
                                                     </button>
                                                 </form>
                                             </td>

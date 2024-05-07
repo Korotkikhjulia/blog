@@ -14,7 +14,7 @@ class SearchController extends Controller
         ]);
         $s = $request->s;
         
-        $posts = Post::where('title', 'LIKE', $s)->with('category')->simplePaginate();
+        $posts = Post::where('title', 'LIKE', "%{$s}%")->with('category')->simplePaginate();
         return view('posts.search', compact('posts', 's'));
     }
 }

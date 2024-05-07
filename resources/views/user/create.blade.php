@@ -50,6 +50,7 @@
                 <div class="col-4">
                     <button type="submit" class="btn btn-primary btn-block">Register</button>
                 </div>
+                <a class="card-link" href="{{ route('login.create') }}" style="margin:auto; margin-top:15px">Log in</a>
             </div>
         </form>
     </div>

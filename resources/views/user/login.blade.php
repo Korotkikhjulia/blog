@@ -32,8 +32,9 @@
             </div>
             <div class="row">
                 <div class="col-4">
-                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
                 </div>
+                <a class="card-link" href="{{ route('register.create') }}" style="margin:auto; margin-top:15px">Register</a>
             </div>
         </form>
     </div>
